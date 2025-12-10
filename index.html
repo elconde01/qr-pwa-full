@@ -17,11 +17,18 @@
     h1{font-size:1.1rem;margin:0}
     button{padding:8px 12px;border-radius:8px;border:1px solid #ccc;background:white;cursor:pointer}
     .controls{display:flex;gap:8px;margin:12px 0}
-    #reader{width:100%;max-width:640px;height:360px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center}
+    #reader{width:100%;max-width:380px;height:260px;overflow:hidden;background:#111;color:#fff;display:flex;align-items:center;justify-content:center}
     table{width:100%;border-collapse:collapse;margin-top:12px}
     th,td{border:1px solid #ddd;padding:6px;font-size:0.9rem}
     .small{font-size:0.85rem;color:#666}
     .actions{display:flex;gap:6px}
+    #reader video,
+    #reader canvas {
+     width: 100% !important;
+     height: 100% !important;
+     object-fit: cover !important;
+    }
+
   </style>
 </head>
 <body>
