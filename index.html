@@ -100,9 +100,9 @@ function onScanSuccess(decodedText){
   if(last === decodedText) return;
 
   lista.push({valor: decodedText, fecha: new Date().toISOString()});
-  navigator.vibrate?.(100);
   saveAndRender();
   flashMessage(`Escaneado: ${decodedText}`);
+  navigator.vibrate?.(100);
 }
 
 function onScanFailure(error){}
