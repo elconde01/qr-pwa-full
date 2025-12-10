@@ -1,5 +1,5 @@
 const CACHE = 'pwa-qr-v1';
-const ASSETS = [ '/', '/index.html', '/manifest.json', 'https://unpkg.com/html5-qrcode@2.3.8/minified/html5-qrcode.min.js' ];
+const ASSETS = [ '/', 'index.html', 'manifest.json', 'https://unpkg.com/html5-qrcode@2.3.8/minified/html5-qrcode.min.js' ];
 
 self.addEventListener('install', e=>{
   e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));
