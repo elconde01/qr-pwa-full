@@ -1,6 +1,6 @@
 {
   "short_name": "QR-Scan",
-  "name": "PWA QR Scanner",
+  "name": "QR Scanner",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"
