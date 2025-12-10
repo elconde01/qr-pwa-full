@@ -1,36 +1,34 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PWA QR Scanner</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+  <title>QR Scanner PWA</title>
+
+  <!-- Manifest (ruta correcta para GitHub Pages) -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0b5fff">
 
+  <!-- Color de la barra superior (Android) -->
+  <meta name="theme-color" content="#000000">
+
+  <!-- Iconos -->
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png">
+
+  <!-- Evitar giro (solo ayuda; algunos móviles pueden ignorarlo) -->
+  <meta name="screen-orientation" content="portrait">
+  <meta name="orientation" content="portrait">
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Librería del lector QR -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
 
-  <style>
-    :root{font-family:system-ui,Segoe UI,Roboto,Arial;}
-    body{max-width:900px;margin:18px auto;padding:12px;}
-    header{display:flex;justify-content:space-between;align-items:center}
-    h1{font-size:1.1rem;margin:0}
-    button{padding:8px 12px;border-radius:8px;border:1px solid #ccc;background:white;cursor:pointer}
-    .controls{display:flex;gap:8px;margin:12px 0}
-    #reader{width:100%;max-width:380px;height:260px;overflow:hidden;background:#111;color:#fff;display:flex;align-items:center;justify-content:center}
-    table{width:100%;border-collapse:collapse;margin-top:12px}
-    th,td{border:1px solid #ddd;padding:6px;font-size:0.9rem}
-    .small{font-size:0.85rem;color:#666}
-    .actions{display:flex;gap:6px}
-    #reader video,
-    #reader canvas {
-     width: 100% !important;
-     height: 100% !important;
-     object-fit: cover !important;
-    }
-
-  </style>
 </head>
+
 <body>
   <header>
     <h1>QR Scanner</h1>
