@@ -3,7 +3,7 @@
   "name": "QR Scanner",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#0b5fff",
   "icons": [
