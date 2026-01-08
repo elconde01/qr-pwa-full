@@ -1,21 +1,13 @@
 {
-  "name": "Registro de Sesiones Fotográficas",
-  "short_name": "SesionesFoto",
+  "short_name": "QR-Scan",
+  "name": "QR Scanner",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2196f3",
   "orientation": "portrait",
-  "icons": [
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+  "background_color": "#ffffff",
+  "theme_color": "#0b5fff",
+   "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
