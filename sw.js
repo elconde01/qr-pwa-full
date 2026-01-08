@@ -1,37 +1,11 @@
-const CACHE_NAME = "sesiones-foto-cache-v1";
-const urlsToCache = [
-  "./index.html",
-  "./manifest.json",
-  "./sw.js",
-  "./icon-192.png",
-  "./icon-512.png"
-];
+const CACHE = 'pwa-qr-v1';
+const ASSETS = [ './', './index.html', './manifest.json', 'https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js' ];
 
-// Instalar Service Worker y cachear archivos
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
-    })
-  );
+self.addEventListener('install', e=>{
+  e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));
+  self.skipWaiting();
 });
-
-// Activar y limpiar cachés viejas
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(
-        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-      );
-    })
-  );
-});
-
-// Interceptar requests y servir desde caché
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener('activate', e=>{ self.clients.claim(); });
+self.addEventListener('fetch', e=>{
+  e.respondWith(caches.match(e.request).then(r=>r || fetch(e.request)));
 });
